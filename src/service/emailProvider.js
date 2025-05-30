@@ -12,6 +12,7 @@ const transporter = nodeMailer.createTransport({
 })
 
 const sendOtpToEmail = async (email, otp, name, flag = 'verify') => {
+
   let templatePath, subject
 
   switch (flag) {
@@ -23,6 +24,14 @@ const sendOtpToEmail = async (email, otp, name, flag = 'verify') => {
     templatePath = path.join(__dirname, '../views/reSendOtp.ejs')
     subject = 'Resend OTP for Verification'
     break
+  case 'welcome-company':
+    templatePath = path.join(__dirname, '../views/welcomeCompanyEmail.ejs')
+    subject = 'Welcome to Our Service'
+    break
+  case 'welcome-user':
+    templatePath = path.join(__dirname, '../views/welcomeUserEmail.ejs')
+    subject = 'Welcome to Our Service'
+    break
   default:
     templatePath = path.join(__dirname, '../views/emailOtp.ejs')
     subject = 'Your Email Verification OTP'
@@ -31,7 +40,7 @@ const sendOtpToEmail = async (email, otp, name, flag = 'verify') => {
   const html = await ejs.renderFile(templatePath, { otp, name })
 
   return transporter.sendMail({
-    from: config.EMAIL_USER,
+    from: config.get('EMAIL_USER'),
     to: email,
     subject,
     text: `Your OTP is ${otp}. It will expire in 10 minutes.`,

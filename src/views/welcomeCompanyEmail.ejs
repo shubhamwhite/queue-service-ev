@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Password Reset Request</title>
+    <title>Welcome to Crystal Events</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -79,34 +79,25 @@
             margin-bottom: 20px;
         }
         
-        .reset-container {
-            background-color: #fff7ed;
-            border: 1px solid #fed7aa;
+        .welcome-container {
+            background-color: #f0f9ff;
+            border: 1px solid #bae6fd;
             border-radius: 8px;
             padding: 24px;
             text-align: center;
             margin: 32px 0;
         }
         
-        .reset-code {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            color: #2563eb;
-            margin: 16px 0;
-            padding: 12px 24px;
-            background-color: #eff6ff;
-            border-radius: 6px;
-            display: inline-block;
-            border: 1px solid #bfdbfe;
-            font-family: 'Courier New', monospace;
+        .welcome-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
         }
         
-        .expiry-note {
-            color: #ea580c;
-            font-size: 13px;
-            font-weight: 500;
-            margin-top: 12px;
+        .welcome-title {
+            margin-top: 0;
+            color: #1e40af;
+            font-weight: 600;
+            font-size: 18px;
         }
         
         /* Button */
@@ -128,6 +119,40 @@
         .button:hover {
             transform: translateY(-1px);
             box-shadow: 0 4px 8px rgba(249, 115, 22, 0.2);
+        }
+        
+        /* Feature List */
+        .feature-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        
+        .feature-item {
+            flex: 1 1 calc(50% - 8px);
+            min-width: 200px;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            font-size: 20px;
+            margin-right: 12px;
+            color: #2563eb;
+        }
+        
+        .feature-text {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .feature-text strong {
+            color: #1e293b;
+            font-weight: 600;
         }
         
         /* Footer */
@@ -191,9 +216,8 @@
                 padding: 24px;
             }
             
-            .reset-code {
-                font-size: 26px;
-                padding: 10px 20px;
+            .feature-item {
+                flex: 1 1 100%;
             }
             
             .logo-img {
@@ -215,47 +239,66 @@
         <div class="container">
             <div class="header">
                 <div class="logo-container">
-                    <!-- Replace with your actual logo URL -->
                     <img src="https://media.istockphoto.com/id/1313644269/vector/gold-and-silver-circle-star-logo-template.jpg?s=2048x2048&w=is&k=20&c=ESdZxqDKqzi91tZX89hjnjxFWLG9OfUxSFzNqdMIj64=" alt="Crystal Events Logo" class="logo-img">
                     <div class="logo-text">CRYSTAL<span>EVENTS</span></div>
                 </div>
-                <h2>Password Reset Request</h2>
+                <h2>Welcome to Crystal Events for Companies!</h2>
             </div>
             
             <div class="content">
-                <p>Hello, <%= name %>,</p>
-                <p>We received a request to reset the password for your Crystal Events account. Here's your password reset verification code:</p>
+                <p>Hello <%= name %>,</p>
+                <p>We're thrilled to welcome your company to Crystal Events! Your business account has been successfully created, giving you access to our powerful event management platform designed specifically for organizations like yours.</p>
                 
-                <div class="reset-container">
-                    <div style="font-size: 14px; color: #4b5563; font-weight: 500;">YOUR PASSWORD RESET CODE</div>
-                    <div class="reset-code"><%= otp %></div>
-                    <div class="expiry-note">⚠️ Expires in 10 minutes</div>
+                <div class="welcome-container">
+                    <div class="welcome-icon">🎉</div>
+                    <h3 class="welcome-title">Your Professional Event Management Solution</h3>
+                    <p>Get ready to streamline your event planning with our comprehensive suite of tools designed for businesses.</p>
                 </div>
                 
-                <p>To reset your password:</p>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-text"><strong>Advanced Analytics</strong> - Track attendance, engagement, and ROI for all your events</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">👥</div>
+                        <div class="feature-text"><strong>Team Collaboration</strong> - Invite colleagues and assign roles for seamless teamwork</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎟️</div>
+                        <div class="feature-text"><strong>Custom Branding</strong> - Showcase your company logo and colors on all event materials</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <div class="feature-text"><strong>Mobile Check-in</strong> - Streamline attendee registration with our mobile app</div>
+                    </div>
+                </div>
+                
+                <p><strong>Here's how to get started:</strong></p>
                 <ol>
-                    <li>Enter this code in the password reset page</li>
-                    <li>Create a new strong password</li>
-                    <li>Confirm your new password</li>
+                    <li>Complete your company profile setup</li>
+                    <li>Invite team members to collaborate</li>
+                    <li>Explore our event templates</li>
+                    <li>Create your first company event</li>
                 </ol>
                 
-                <p style="margin-bottom: 24px;">If you didn't request this password reset, please secure your account immediately by changing your password and contact our support team.</p>
+                <a href="#" class="button">Go to Your Dashboard</a>
                 
-                <p>Need help? <a href="mailto:support@crystal-events.com" style="color: #2563eb; text-decoration: none; font-weight: 500;">Contact our support team</a>.</p>
+                <p>Our dedicated business support team is available to help you get the most out of our platform. Don't hesitate to reach out with any questions.</p>
                 
-                <p style="margin-bottom: 0;">Best regards,<br><strong style="color: #1e293b;">The Crystal Events Team</strong></p>
+                <p>Welcome aboard!<br><strong style="color: #1e293b;">The Crystal Events Business Team</strong></p>
             </div>
             
             <div class="footer">
                 <div class="social-links">
                     <a href="#" class="social-icon">Twitter</a> | 
                     <a href="#" class="social-icon">Facebook</a> | 
-                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">LinkedIn</a>
                 </div>
                 <div class="company-info">
                     <p>© 2023 Crystal Event Management System. All rights reserved.</p>
                     <p>123 Event Plaza, Suite 500, San Francisco, CA 94107</p>
-                    <p>Need help? Contact us at support@crystal-events.com</p>
+                    <p>Business support: <a href="mailto:business@crystal-events.com" style="color: #2563eb; text-decoration: none;">business@crystal-events.com</a></p>
                 </div>
             </div>
         </div>
